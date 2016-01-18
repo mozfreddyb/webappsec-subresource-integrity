@@ -511,7 +511,7 @@ Note: A future revision of this specification is likely to include integrity sup
 for all possible subresources, i.e., `a`, `audio`, `embed`, `iframe`, `img`,
 `link`, `object`, `script`, `source`, `track`, and `video` elements.
 
-### The `integrity` attribute ### {#the-integrity-attribute}
+## The `integrity` attribute ## {#the-integrity-attribute}
 
 The `integrity` attribute represents <a>integrity metadata</a> for an element.
 The value of the attribute MUST be either the empty string, or at least one
@@ -539,9 +539,9 @@ no options have been defined. It is likely that a future version of the spec
 will define a more specific syntax for options, so it is defined here as broadly
 as possible.
 
-### Element interface extensions ### {#interface-extensions}
+## Element interface extensions ## {#interface-extensions}
 
-#### HTMLLinkElement #### {#HTMLLinkElement}
+### HTMLLinkElement ### {#HTMLLinkElement}
 
 <pre class="idl">
   partial interface HTMLLinkElement {
@@ -549,22 +549,22 @@ as possible.
   };
 </pre>
 
-##### Attributes ##### {#HTMLLinkElement-Attributes}
+#### Attributes #### {#HTMLLinkElement-Attributes}
 <b>integrity</b> of type `DOMString`: The value of this element's integrity
 attribute.
 
-#### HTMLScriptElement #### {#HTMLScriptElement}
+### HTMLScriptElement ### {#HTMLScriptElement}
 <pre class="idl">
   partial interface HTMLScriptElement {
     attribute DOMString integrity;
   };
 </pre>
 
-##### Attributes ##### {#HTMLScriptElement-Attributes}
+#### Attributes #### {#HTMLScriptElement-Attributes}
 <b>integrity</b> of type `DOMString`: The value of this element's integrity
 attribute.
 
-### Handling integrity violations ### {#handling-integrity-violations}
+## Handling integrity violations ## {#handling-integrity-violations}
 
 The user agent will refuse to render or execute responses that fail an integrity
 check, instead returning a network error as defined in Fetch [[!FETCH]].
@@ -575,9 +575,9 @@ from a CDN, perhaps from a secondary, trusted, but slower source) can catch this
 `error` event and provide an appropriate handler to replace the
 failed resource with a different one.
 
-### Elements ### {#elements}
+## Elements ## {#elements}
 
-#### The `link` element for stylesheets #### {#link-element-for-stylesheets}
+### The `link` element for stylesheets ### {#link-element-for-stylesheets}
 
 Whenever a user agent attempts to <a>obtain a resource</a> pointed to by a
 `link` element that has a `rel` attribute with the keyword of `stylesheet`,
@@ -589,7 +589,7 @@ the origin being the origin of the link element's Document, the default origin
 behavior set to taint, and the <a>integrity metadata</a> of the request set to
 the value of the element's `integrity` attribute.
 
-#### The `script` element #### {#script-element}
+### The `script` element ### {#script-element}
 
 Replace step 14.1 of HTML5's <a>prepare a script</a> algorithm with:
 
